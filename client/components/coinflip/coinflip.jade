@@ -1,0 +1,81 @@
+.section-header
+  .center Coinflips
+  a.blue.create-game.header-right(href='#', ng-click='showModal()')
+    | Create Game
+.section-content
+  .coinflip(ng-repeat="coinflip in coinflips", data-id="{{coinflip._id}}")
+    img.profilepicture(src='{{coinflip.profilepicture}}')
+    .username {{coinflip.personaname}}
+    .joinable(ng-if='coinflip.winner === "Undecided"', ng-click='acceptGame($index)')
+      = 'Joinable'
+    .in-progress(ng-if='coinflip.winner !== "Undecided"')
+      = 'In Progress'
+    .amount-side
+      .spacer
+      .amount {{coinflip.amount}}
+      i.fa.fa-diamond(aria-hidden="true")
+      .coinflip-side
+        img(src='/assets/images/red.png', width='24px', height='24px', ng-if='coinflip.player1Side === "T"')
+        img(src='/assets/images/blue.png', width='24px', height='24px', ng-if='coinflip.player1Side === "CT"')
+
+  .no-coinflips(ng-if="coinflips.length === 0")
+    p No coinflips found!
+
+//- .create-modal(data-remodal-id='create-modal')
+//-   button.remodal-close(data-remodal-action="close")
+//-   h2.modalTitle Create Game
+//-   .team-images
+//-     .red(ng-click='selectRed();').glow
+//-     .blue(ng-click='selectBlue();')
+//-   .amount-slider
+//-     .amount {{sliderDisplay}} / {{maxKeys}}
+//-         i.fa.fa-diamond.red(aria-hidden="true")
+//-     input(type='range', min='0', max='100', step='0.01', ng-model='sliderAmount', ng-change='updateAmount()')
+//-   br
+//-   button.remodal-cancel(data-remodal-action="cancel") Cancel
+//-   button.remodal-confirm(data-remodal-action="confirm") OK
+
+.create-modal.modal(hidden=true)
+  .mask(ng-click='hideModal();')
+  .create-dialog.dialog
+    h1 Create Game
+    .team-images
+      .red(ng-click='selectRed();').glow
+      .blue(ng-click='selectBlue();')
+    .amount-slider
+      .amount {{sliderDisplay}} / {{maxKeys}}
+          i.fa.fa-diamond.red(aria-hidden="true")
+      input(type='range', min='0', max='100', step='0.01', ng-model='sliderAmount', ng-change='updateAmount()')
+    .dialog-button.create-game(ng-click='hideModal(); createGame();') Create game!
+
+.accept-modal.modal(hidden=true)
+  .mask(ng-click='hideModal();')
+  .accept-dialog.dialog
+    h1 Accept Game
+    .text
+      ="Are you sure you want to join with {{acceptkeys}} "
+      i.fa.fa-diamond.red(aria-hidden="true")
+      = "?"
+    .dialog-button.create-game(ng-click='hideModal(); joinGame();') Join game!
+
+.flip-modal.modal(hidden)
+  .mask(ng-click='hideModal();')
+  .flip-dialog.dialog
+    h1 Coinflip
+    .coin-container
+      .coin
+        img.side.frontside(src='/assets/images/red.png')
+        img.side.backside(src='/assets/images/blue.png')
+    .versus-container
+      .versus-player.left
+        img(src='https://steamdb.info/static/img/default.jpg')
+        .username Julian
+        .amount 1 key(s)
+      .versus-sign
+        .vert-line
+        p vs
+      .versus-player.right
+        img(src='https://steamdb.info/static/img/default.jpg')
+        .username Julian
+        .amount 1 key(s)
+    .dialog-button.create-game(ng-click='hideModal();') Done!

@@ -1,0 +1,15 @@
+## TODO
+- [ ] Roulette
+- [ ] Profile
+  - [ ] Retry Trade offers
+  - [ ] Public/Private Profile
+- [ ] Jackpot
+- [ ] Admin Panel
+  - [ ] Statistics/graphs
+- [ ] More Bots
+  - [ ] Auto Deposit Bot Selection
+  - [ ] Better Withdraw (1 bot at a time csgodouble.com)
+- [ ] Countdown for giveaway
+- [ ] Fully automatic trivia
+- [ ] Multiple item Withdraw
+- [ ] Fix weird crash bug

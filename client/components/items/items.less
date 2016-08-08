@@ -1,0 +1,257 @@
+// * {
+//   transition: all 0.5s;
+// }
+
+.info {
+    color: red;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.buy-dialog {
+  height: 200px;
+}
+
+.sort-info {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+input.search {
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  -webkit-flex: 3 0 0;
+  -ms-flex: 3 0 0;
+  flex: 3 0 0;
+  margin-right: 5px;
+  transition: 1s border;
+}
+
+input.search:focus {
+  border-color: #555;
+  outline: none;
+}
+
+.remodal-cancel, .remodal-confirm {
+  margin-right: 3px;
+  margin-left: 3px;
+  color: white;
+}
+
+.remodal-info {
+  background-color: #81C0C7;
+}
+
+.remodal-info:active, .remodal-info:focus, .remodal-info:hover {
+  background-color: #66B7BA;
+}
+
+select.sort {
+  width: 100px;
+  font-size: 15px;
+  flex: 0 0 150px;
+  cursor: pointer;
+}
+
+// .deposit-modal .items, .withdraw-modal .items {
+//   background-color: #ddd;
+//   height: 286px;
+//   padding: 10px;
+//   overflow: scroll;
+// }
+
+.items .item {
+  width: 84px;
+  margin: 10px;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  padding: 5px;
+  -webkit-box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.75);
+  transition: all 0.2s;
+}
+
+.deposit-modal .items .item {
+  cursor: pointer;
+}
+
+.item.selected {
+  border-color: #000;
+}
+
+.item img {
+  margin: auto;
+  display: block;
+}
+
+.items .item .name, .price {
+  text-align: center;
+}
+
+.items .item .name {
+  font-weight: bold;
+  font-size: 12px;
+  height: 34px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-button {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.buy-item {
+  background-color: #ac1d24;
+  color: white;
+}
+
+.buy-item:hover {
+  background-color: lighten(rgb(172, 29, 36), 10%);
+}
+
+.price {
+    color: #444;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.title {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.title-left {
+  flex: 1 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.title h2 {
+  margin-right: 10px;
+}
+
+.title .refresh-inventory {
+  flex: 0 0 32px;
+  height: 32px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+
+@-webkit-keyframes shake {
+    8%, 41% {
+        -webkit-transform: translateX(-10px);
+    }
+    25%, 58% {
+        -webkit-transform: translateX(10px);
+    }
+    75% {
+        -webkit-transform: translateX(-5px);
+    }
+    92% {
+        -webkit-transform: translateX(5px);
+    }
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+.trade-url {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  input {
+    border: #aaa 1px solid;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    flex: 1 0 0;
+  }
+  input.invalid {
+    -webkit-animation: shake .6s linear;
+  }
+  label {
+    flex: 0 0 85px;
+    margin-right: 10px;
+  }
+}
+
+
+.refresh-inventory:hover {
+  transform: rotate(-30deg);
+}
+
+.refresh-inventory:active {
+  animation: rotateIt 0.3s forwards;
+}
+
+@keyframes rotateIt {
+  99.99% {
+    transform: rotate(-720deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.title a {
+  align-self: middle;
+  margin-left: auto;
+  text-align: center;
+}
+
+.modal-button {
+  font-weight: bold;
+  margin-right: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  width: 75px;
+  padding: 5px;
+}
+
+.cancel {
+  background-color: rgb(30, 83, 167);
+}
+
+.cancel:hover {
+  background-color: lighten(rgb(30, 83, 167), 10%);
+}
+.deposit, .withdraw {
+  background-color: rgb(172, 29, 36);
+}
+
+.deposit:hover, .withdraw:hover {
+  background-color: lighten(rgb(172, 29, 36), 10%);
+}
+
+.item-image-container {
+  position: relative;
+}
+
+.overlay-item {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+}
+
+.item-image-main {
+  position:relative;
+  z-index: 10;
+}

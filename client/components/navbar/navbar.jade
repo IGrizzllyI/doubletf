@@ -1,0 +1,55 @@
+.navbar(ng-controller='NavbarController')
+  .navbar-header
+    img.navbar-img(src='/assets/images/logoryan.png')
+    a(ui-sref='main.coinflip') Double.tf
+  .navbar-right
+    a(href='/auth/steam', target="_self", ng-if='nav.loggedin == false')
+      img(src='/assets/images/sits_small.png')
+    .profile-text(ng-if='nav.loggedin == true')
+        = "{{nav.loggedintext}} "
+        i.fa.fa-diamond.red(aria-hidden="true")
+        = " | "
+        a(href='/auth/logout', target="_self") Logout
+      = " "
+.under-nav
+  .current-nav
+    a(ui-sref-active='active', ui-sref='main.coinflip') Coinflips
+    a(ui-sref-active='active', ui-sref='main.dices') Dices
+    //- a(ui-sref-active='active', ui-sref='main.roulette') Roulette
+  .under-nav-right
+    a(href='#', data-remodal-target='deposit') Deposit
+    a(href='#', data-remodal-target='withdraw') Withdraw
+    //- a(ui-sref='main.profile') Profile
+
+.faq-modal(hidden)
+  .close-container
+    h3 FAQ
+    a.modal-button.close(href='#', onClick="$('.faq-modal').hide()") Close
+  .modal-container
+    b Q: How does the game work?
+    br
+    | First, deposit items using the deposit link at the top. Then, play with the keys that you receive after you accept the trade offer. Then, withdraw more with your winnings.
+    br
+    br
+    b Q: Why can't I see all the items in my inventory?
+    br
+    | A: The site currently doesn't allow certain items such as noise makers and crates. All this means is that our site doesn't want the items in your inventory. Also, your items may not be the minimum deposit.
+    br
+    br
+    b Q: What is the minimum and maximum deposit?
+    br
+    | A: There is currently no maximum deposit. The minimum deposit is around 5 ref, but this could change at any time.
+    br
+    br
+    b Q: How can I join a game?
+    br
+    | A: If a game is joinable, you can click the joinable text on the coinflip and it will ask you to confirm the join.
+    br
+    br
+    b Q: How can I contact support?
+    br
+    | A: Submit a ticket on 
+    a(href='https://doubletf.freshdesk.com') Double.tf support
+    |  and we will try to contact you ASAP.
+    br
+    br

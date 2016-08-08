@@ -1,0 +1,88 @@
+/**
+ * Navbar styling
+ **/
+.navbar {
+  height: 80px;
+  background-color: #4A398A;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-img {
+  margin: 0px 10px;
+  width: 48px;
+}
+
+.diamond-display {
+  display:inline-block;
+  border-radius: 100px;
+  background-color: darken(#4A398A, 15%);
+  padding: 5px;
+}
+
+.navbar-header {
+  padding: 4px;
+  flex: 1 0 0;
+  font-size: 34pt;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+
+.navbar-brand {
+  font-family: "Oswald", sans-serif;
+  font-size: 22pt;
+}
+
+.navbar-right {
+  margin: 29px;
+}
+
+/**
+ * Under Nav Styling
+ **/
+
+.under-nav {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  .current-nav {
+    flex: 1 0 0;
+    a {
+      padding-right: 20px;
+      text-decoration: none;
+      color: #999;
+    }
+    a.active {
+      color: black;
+    }
+    a:hover {
+      color: #444;
+    }
+  }
+
+  .under-nav-right a {
+    color: #999;
+    text-decoration: none;
+    margin: 0px 10px;
+    transition: color 0.2s;
+  }
+
+  .under-nav-right a:hover {
+    color: black;
+  }
+}
+
+.red {
+  color: red;
+}

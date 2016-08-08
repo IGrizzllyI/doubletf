@@ -1,0 +1,14 @@
+{
+  "apps" : [{
+    "name": "Double.tf Node",
+    "script": "server/bootstrap.js",
+    "env": {
+      "SITE_URI": "http://double.tf/",
+      "REDIS_HOST": "127.0.0.1",
+      "REDIS_PORT": "6379",
+      "DATABASE_URL": "mysql://root/doubletf",
+      "NODE_ENV": "production",
+      "PORT": 8080
+    }
+  }]
+}

@@ -1,0 +1,46 @@
+.section-header
+  .center Roulette
+.section-content
+  .roulette
+    .roulette-ticker
+
+.section-content.white.padded
+  .roulette-input
+    .roulette-left-input
+      .balance 
+        span.balance-text Balance: 
+        | {{userInfo.diamonds}} 
+        i.fa.fa-diamond.red(aria-hidden="true")
+      .amount-buttons
+        a(href='#').amount Clear
+        a(href='#').amount +1
+        a(href='#').amount +10
+        a(href='#').amount +50
+        a(href='#').amount 1/2
+        a(href='#').amount x2
+        a(href='#').amount Max
+    .roulette-right-input
+      .side-wrapper
+        .choose-side-text Choose a side: 
+        .roulette-sides
+          img.roulette-side.selected(src='assets/images/red.png', ng-click='selectCoin(0)', data-coin-id='0')
+          img.roulette-side(src='assets/images/purple.png', ng-click='selectCoin(1)', data-coin-id='1')
+          img.roulette-side(src='assets/images/blue.png', ng-click='selectCoin(2)', data-coin-id='2')
+        a.roulette-deposit(href='#') Deposit & Go!
+  input.to-bet(type='text', placeholder='Amount to Bet')
+
+.roulette-sections
+  .third
+    .section-header Red
+    .section-content
+      | Hi
+
+  .third
+    .section-header Purple
+    .section-content
+      | Hi
+      
+  .third
+    .section-header Blue
+    .section-content
+      | Hi

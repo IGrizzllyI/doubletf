@@ -1,0 +1,57 @@
+.deposit-modal(hidden, data-remodal-id="deposit")
+  button.remodal-close(data-remodal-action="close")
+  h2.modalTitle Deposit
+  button.remodal-cancel(data-remodal-action="cancel") Cancel
+  button.remodal-confirm.remodal-info.refresh-deposit(data-remodal-action='refresh') Refresh
+  button.remodal-confirm(data-remodal-action="confirm") Confirm
+  .trade-url
+    label
+      | Trade URL 
+      a(href='http://steamcommunity.com/id/julian__/tradeoffers/privacy#trade_offer_access_url', target='_blank') (here) 
+    input(type='text', placeholder='Paste your trade url here!')
+  .info
+    | Minimum is ~4 ref. If your items do not show up, it is for a reason.
+  .sort-info
+    input.search.search-deposit(type='text', placeholder='Search...')
+    select.sort.sort-deposit
+      option Price Descending
+      option Price Ascending
+      option Name A-Z
+  .items
+
+.withdraw-modal(hidden, data-remodal-id="withdraw")
+  button.remodal-close(data-remodal-action="close")
+  h2.modalTitle Withdraw
+  button.remodal-confirm.remodal-info.refresh-withdraw(data-remodal-action='reload') Refresh
+  button.remodal-cancel(data-remodal-action="cancel") Cancel
+  .trade-url
+    label
+      | Trade URL 
+      a(href='https://steamcommunity.com/id/julian__/tradeoffers/privacy#trade_offer_access_url', target='_blank') (here) 
+    input(type='text', placeholder='Paste your trade url here!')
+  .info
+    | Make sure your Trade URL is correct and you accept the offer!
+  .sort-info
+    input.search.search-withdraw(type='text', placeholder='Search...')
+    select.sort.sort-withdraw
+      option Price Descending
+      option Price Ascending
+      option Name A-Z
+  .items
+  
+.buy-modal(data-remodal-id='buy-modal')
+  button.remodal-close(data-remodal-action="close")
+  h2.modalTitle Are you sure you want to buy this item?
+  p.modalDesc Once you click OK, you can never go back!
+  br
+  button.remodal-cancel(data-remodal-action="cancel") Cancel
+  button.remodal-confirm(data-remodal-action="confirm") OK
+  
+.remodal(data-remodal-id='modal')
+  button.remodal-close(data-remodal-action='close')
+  h1 Remodal
+  p
+    | Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+  br
+  button.remodal-cancel(data-remodal-action='cancel') Cancel
+  button.remodal-confirm(data-remodal-action='confirm') OK

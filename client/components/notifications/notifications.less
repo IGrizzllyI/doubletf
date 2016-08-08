@@ -1,0 +1,34 @@
+.notifications {
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  top: 5px;
+  margin-left: -150px;
+  z-index: 100000000;
+  color: white;
+}
+
+.notification {
+  border-radius: 5px;
+  padding: 7px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.notification.success {
+  background-color: green;
+  border-bottom: 2px solid darkgreen;
+}
+
+.notification.error {
+  background-color: red;
+  border-bottom: 2px solid darkred;
+}

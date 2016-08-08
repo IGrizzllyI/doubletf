@@ -1,0 +1,50 @@
+.section-header.dice-width Dices
+.section-content.padded.white.dice-width()
+  .dice-row
+    .bet-amount
+      .dices-header Bet Amount
+      .game-row-inner
+        input.dices-input.bet-amount-value(value = "0.01", ng-model = 'betAmount')
+        .button-group-dice
+          a.button-dice(ng-click='half()') 1/2
+          a.button-dice(ng-click='double()') 2x
+          a.button-dice(ng-click='min()') Min
+          a.button-dice(ng-click='max()') Max
+    .profit-on-win
+      .dices-header Profit on win
+      .profit-dices
+        i.fa.fa-diamond(aria-hidden="true")
+        | {{profit.toFixed(2)}}
+  .dice-row
+    .bet-amount
+      .dices-header Win Chance
+      .game-row-inner
+        input.dices-input.win-chance(value = "47.5", ng-model = 'winChance', ng-change = 'changeWinChance()')
+        input.dices-slider(type='range', min='0.01', max='95', step='0.01', ng-model = 'winChance', ng-change = 'changeWinChance()')
+    .profit-on-win
+      .dices-header Multiplier
+      .profit-dices
+        input.dices-input.multiplier(value = "2", ng-model = 'multiplier', ng-change = 'changeMultiplier()')
+  button.dices-button.under-over(ng-click='changeUnderOver()') Roll {{underOver}} {{winChance}} to win
+  button.dices-button.roll-dices(ng-click='roll()', ng-class='rollButtonClass')
+    span(ng-if='!rolling && !scoreToShow') Roll now!
+    span(ng-if='rolling') Rolling...
+    span(ng-if='scoreToShow') {{scoreToShow}}
+
+table.dices-history
+  tr
+    th Roll ID
+    th User
+    th Time
+    th Amount
+    th Win Chance
+    th Actual Number
+    th Profit
+  tr(ng-repeat="game in dicesHistory")
+    td {{ game._id }}
+    td {{ game.personaname }}
+    td {{ game.datePlayed }}
+    td {{ game.amountWagered }}
+    td {{ game.winNumber }}
+    td {{ game.actualNumber }}
+    td {{ game.profit }}
