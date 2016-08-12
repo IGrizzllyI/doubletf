@@ -18,4 +18,6 @@ cache:
   directories:
     - node_modules
 script:
-  - npm start
+  - npm install
+  - npm install mysql
+  - node server/bootstrap.js
