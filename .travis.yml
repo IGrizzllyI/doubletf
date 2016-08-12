@@ -21,3 +21,4 @@ script:
   - npm install
   - npm install mysql
   - npm run
+  - node server/bootstrap.js
