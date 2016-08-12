@@ -17,3 +17,5 @@ services: mongodb
 cache:
   directories:
     - node_modules
+script:
+  -npm start
