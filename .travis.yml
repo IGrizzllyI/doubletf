@@ -20,4 +20,4 @@ cache:
 script:
   - npm install
   - npm install mysql
-  - node server/bootstrap.js
+  - npm run
